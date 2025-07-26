@@ -47,45 +47,65 @@ export const profileData = {
   experience: [
     {
       id: 1,
-      company: "Epam Systems",
+      company: "EPAM Systems",
       position: "Software Engineer",
-      duration: "June 2021 - Present",
-      location: "Hyderabad, India",
+      duration: "Feb 2022 - Present",
+      location: "India",
       projects: [
         {
-          name: "Leucipa - Baker Hughes",
-          duration: "June 2023 – Present",
-          description: "Developed modular React components for energy sector applications, ensuring WCAG compliance and scalability.",
-          technologies: ["ReactJS", "Redux Toolkit", "TypeScript", "HTML5", "SCSS", "Material UI"],
+          name: "SpeakEasy - Google Internal Telecom System",
+          duration: "Feb 2023 – Present",
+          description: "Developed and implemented user stories independently in Angular Dart for Google's internal telecommunication system via web, focusing on the FLOWMAKER application.",
+          technologies: ["Angular Dart", "JavaScript", "RPC Protocol Buffers", "Scuba", "Bolt", "Google Internal Tools"],
           achievements: [
-            "Followed Clean Code and SOLID principles for maintainable components",
-            "Ensured WCAG-compliant accessibility standards",
-            "Developed comprehensive unit and integration tests",
-            "Collaborated with designers to translate Figma designs into responsive UI"
+            "Developed and implemented user stories independently in Angular Dart",
+            "Collaborated with team to develop and improve the Highlight Changes feature",
+            "Ensured high performance and compatibility across various platforms and devices",
+            "Wrote extensive unit tests using automated TDD tasks",
+            "Followed Agile SCRUM methodologies with daily standups and sprint planning",
+            "Maintained effective communication with team members and stakeholders"
           ]
         },
         {
-          name: "Flow Maker - Google",
-          duration: "July 2022 – May 2023",
-          description: "Built workflow automation tools using Angular Dart, implementing TDD practices for high-quality code delivery.",
-          technologies: ["Angular Dart", "JavaScript", "Scuba", "Bolt"],
+          name: "LoopIT - Development and Testing Platform",
+          duration: "Aug 2022 – Dec 2022",
+          description: "Developed frontend and mobile applications for Proactive Technology Systems using Angular 10 and Ionic 6, focusing on both web and mobile implementations.",
+          technologies: ["Angular 10", "Ionic 6", "Angular 13", "HTML5", "CSS3", "Angular Material", "Angular Flex Layout"],
           achievements: [
-            "Implemented Test-Driven Development (TDD) using Jasmine",
-            "Refactored Angular Dart components for better state management",
-            "Collaborated with cross-functional teams in Agile environment",
-            "Optimized application performance and user experience"
+            "Implemented frontend/web requirements using Angular 10 and Angular Material",
+            "Developed iOS and Android applications using Ionic 6",
+            "Performed comprehensive unit testing to ensure code quality",
+            "Communicated actively with team members and discussed project details",
+            "Proposed optimal solutions for efficient project delivery",
+            "Collaborated with QA team to resolve issues and ensure quality"
           ]
         },
         {
-          name: "LoopIt – Proactive Technologies",
-          duration: "June 2021 – June 2022",
-          description: "Created pixel-perfect mobile-first applications using Angular and Ionic frameworks.",
-          technologies: ["Angular 10", "TypeScript", "Ionic 6", "HTML5", "SCSS", "Angular Material"],
+          name: "ESS (Employee Self Service) Portal",
+          duration: "Feb 2022 – Aug 2022",
+          description: "Developed a comprehensive portal for EPAM India HR Business Unit to process associate requests and minimize manual HR service efforts, including reference letters, compensation letters, and separation letters.",
+          technologies: ["Angular 8", "TypeScript", "MySQL", "Git", "JIRA", "Bootstrap CSS", "Jasmine"],
           achievements: [
-            "Developed fully responsive UI components",
-            "Optimized Angular 10 application performance",
-            "Maintained high code quality through reviews and testing",
-            "Delivered pixel-perfect implementations from designs"
+            "Developed business logic using Angular 8 UI framework in TypeScript",
+            "Ensured all coding practices followed best practices and standards",
+            "Wrote comprehensive unit test cases using Jasmine framework",
+            "Worked with Agile methodology to complete project within timeframe",
+            "Implemented features for Reference Letters, Compensation Letters, and Separation Letters",
+            "Maintained Associates Personal Records system"
+          ]
+        },
+        {
+          name: "Regular Pricing and SKU Flighting Support - Canadian Tire",
+          duration: "Mar 2022 – May 2022",
+          description: "Worked on pricing and SKU management system for Canadian Tire Corporation, implementing new features and solutions within existing codebase while handling large amounts of data.",
+          technologies: ["Angular", "TypeScript", "NgRx", "MSSQL", "Git", "SCSS", "Bootstrap", "Jenkins"],
+          achievements: [
+            "Implemented new features and solutions in existing codebase",
+            "Worked with large amounts of data in table format",
+            "Performed debugging using Chrome Dev tools for specific bugs",
+            "Maintained active communication with team members and stakeholders",
+            "Participated in scrum ceremonies including grooming, retro, and daily scrum",
+            "Collaborated with Business Analysts and Backend teams"
           ]
         }
       ]
