@@ -15,25 +15,32 @@ export const profileData = {
   
   skills: {
     frontend: [
-      { name: "ReactJS", level: 90, category: "framework" },
-      { name: "Angular", level: 85, category: "framework" },
+      { name: "Angular", level: 90, category: "framework" },
+      { name: "ReactJS", level: 85, category: "framework" },
+      { name: "Angular Dart", level: 80, category: "framework" },
       { name: "TypeScript", level: 90, category: "language" },
       { name: "JavaScript", level: 95, category: "language" },
       { name: "HTML5", level: 95, category: "markup" },
-      { name: "CSS3/SCSS", level: 90, category: "styling" },
-      { name: "Material UI", level: 85, category: "ui" },
-      { name: "Redux Toolkit", level: 80, category: "state" },
-      { name: "Ionic", level: 75, category: "mobile" }
+      { name: "CSS3", level: 90, category: "styling" },
+      { name: "SASS/SCSS", level: 85, category: "styling" },
+      { name: "Bootstrap CSS", level: 85, category: "ui" },
+      { name: "Angular Material", level: 80, category: "ui" },
+      { name: "Ionic", level: 80, category: "mobile" },
+      { name: "Webpack", level: 75, category: "build" }
     ],
     tools: [
       { name: "Git", level: 90 },
-      { name: "Figma", level: 80 },
-      { name: "Jira", level: 85 },
-      { name: "VS Code", level: 95 },
-      { name: "Jest", level: 85 },
-      { name: "React Testing Library", level: 80 },
-      { name: "Webpack", level: 75 },
-      { name: "OpenSearch", level: 70 }
+      { name: "Visual Studio Code", level: 95 },
+      { name: "JIRA", level: 85 },
+      { name: "Confluence", level: 80 },
+      { name: "Jenkins", level: 75 },
+      { name: "Bitbucket", level: 80 },
+      { name: "Jasmine", level: 85 },
+      { name: "Karma", level: 80 },
+      { name: "MySQL", level: 75 },
+      { name: "MSSQL", level: 70 },
+      { name: "Node.js", level: 75 },
+      { name: "NPM", level: 80 }
     ]
   },
 
