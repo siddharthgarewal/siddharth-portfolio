@@ -104,7 +104,7 @@ const Hero = () => {
               {/* Profile Image */}
               <div className="absolute inset-4 rounded-xl overflow-hidden">
                 <img
-                  src="/assets/profile.png"
+                  src={`${process.env.PUBLIC_URL}/assets/profile.png`}
                   alt={personalInfo.name}
                   className="w-full h-full object-cover"
                 />
