@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/siddharth-portfolio/static/css/main.82e47a4e.css",
-    "main.js": "/siddharth-portfolio/static/js/main.c7724c45.js",
+    "main.js": "/siddharth-portfolio/static/js/main.a4088760.js",
     "index.html": "/siddharth-portfolio/index.html",
     "main.82e47a4e.css.map": "/siddharth-portfolio/static/css/main.82e47a4e.css.map",
-    "main.c7724c45.js.map": "/siddharth-portfolio/static/js/main.c7724c45.js.map"
+    "main.a4088760.js.map": "/siddharth-portfolio/static/js/main.a4088760.js.map"
   },
   "entrypoints": [
     "static/css/main.82e47a4e.css",
-    "static/js/main.c7724c45.js"
+    "static/js/main.a4088760.js"
   ]
 }
