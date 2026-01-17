@@ -22,7 +22,7 @@ const Experience = () => {
             Work Experience
           </h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            3+ years of experience building scalable web applications and collaborating with cross-functional teams
+            4.5+ years of experience building scalable web applications and collaborating with cross-functional teams
           </p>
         </div>
 

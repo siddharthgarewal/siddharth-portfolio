@@ -85,7 +85,7 @@ const Hero = () => {
               {/* Profile Image */}
               <div className="absolute inset-4 rounded-xl overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face"
+                  src="/assets/profile.png"
                   alt={personalInfo.name}
                   className="w-full h-full object-cover"
                 />
