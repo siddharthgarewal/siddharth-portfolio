@@ -16,6 +16,13 @@ const Hero = () => {
     document.body.removeChild(link);
   };
 
+  const handleViewWork = () => {
+    const projectsSection = document.getElementById('projects');
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden">
       {/* Background Pattern */}
@@ -25,7 +32,7 @@ const Hero = () => {
       <div className="container mx-auto px-6 lg:px-8 min-h-screen flex items-center">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
           {/* Left Content */}
-          <div className="space-y-8">
+          <div className="space-y-8 pt-16">
             <div className="space-y-4">
               <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm">
                 <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
@@ -65,7 +72,8 @@ const Hero = () => {
             <div className="flex flex-wrap gap-4">
               <Button 
                 size="lg" 
-                className="bg-white text-slate-900 hover:bg-slate-100 transition-all duration-300 transform hover:scale-105"
+                onClick={handleViewWork}
+                className="bg-white text-slate-900 hover:bg-slate-100 transition-all duration-300 transform hover:scale-105 cursor-pointer"
               >
                 View My Work
                 <ArrowRight className="ml-2 h-4 w-4" />

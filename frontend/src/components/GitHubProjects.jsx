@@ -11,25 +11,53 @@ const GitHubProjects = () => {
     const fetchGitHubRepos = async () => {
       try {
         setLoading(true);
+        setError(null);
+        
         // Fetch user repos sorted by stars
         const response = await fetch(
-          `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=stars&per_page=6&direction=desc`
+          `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=stars&per_page=100&direction=desc`,
+          {
+            mode: 'cors',
+            headers: {
+              'Accept': 'application/vnd.github.v3+json',
+              'Content-Type': 'application/json',
+            },
+          }
         );
         
         if (!response.ok) {
-          throw new Error('Failed to fetch repositories');
+          const errorData = await response.json();
+          throw new Error(errorData.message || `HTTP ${response.status}: Failed to fetch repositories`);
         }
 
         const data = await response.json();
+        
+        if (!Array.isArray(data)) {
+          throw new Error('Invalid response format from GitHub API');
+        }
+
+        if (data.length === 0) {
+          throw new Error('No repositories found for this user');
+        }
         
         // Fetch additional details for each repo (topics, watchers, etc.)
         const detailedRepos = await Promise.all(
           data.map(async (repo) => {
             try {
-              const detailResponse = await fetch(`https://api.github.com/repos/${GITHUB_USERNAME}/${repo.name}`);
-              const detailData = await detailResponse.json();
-              return { ...repo, ...detailData };
-            } catch {
+              const detailResponse = await fetch(`https://api.github.com/repos/${GITHUB_USERNAME}/${repo.name}`, {
+                mode: 'cors',
+                headers: {
+                  'Accept': 'application/vnd.github.v3+json',
+                  'Content-Type': 'application/json',
+                },
+              });
+              if (detailResponse.ok) {
+                const detailData = await detailResponse.json();
+                return { ...repo, ...detailData };
+              }
+              return repo;
+            } catch (err) {
+              console.warn(`Failed to fetch details for ${repo.name}:`, err);
               return repo;
             }
           })
@@ -38,6 +66,7 @@ const GitHubProjects = () => {
         // Filter and format repos
         const formattedRepos = detailedRepos
           .filter(repo => !repo.fork) // Exclude forks
+          .sort((a, b) => b.stargazers_count - a.stargazers_count) // Sort by stars
           .map(repo => ({
             id: repo.id,
             title: repo.name,
@@ -60,11 +89,20 @@ const GitHubProjects = () => {
           }))
           .slice(0, 3); // Limit to top 3 repos
 
+        if (formattedRepos.length === 0) {
+          throw new Error('No non-fork repositories found');
+        }
+
         setRepos(formattedRepos);
         setError(null);
       } catch (err) {
         console.error('Error fetching GitHub repos:', err);
-        setError(err.message);
+        console.error('Error details:', {
+          message: err.message,
+          stack: err.stack,
+          type: err.constructor.name,
+        });
+        setError(err.message || 'Unable to load projects. Please try again later.');
         setRepos([]);
       } finally {
         setLoading(false);

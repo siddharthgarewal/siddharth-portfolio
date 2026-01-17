@@ -26,6 +26,16 @@ const Header = () => {
 
   const { personalInfo } = profileData;
 
+  const handleAboutClick = (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setIsMenuOpen(false);
+  };
+
+  const handleNavClick = (href) => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       scrolled ? 'bg-slate-900/95 backdrop-blur-sm border-b border-slate-800' : 'bg-transparent'
@@ -45,6 +55,13 @@ const Header = () => {
               <a
                 key={item.name}
                 href={item.href}
+                onClick={(e) => {
+                  if (item.name === 'About') {
+                    handleAboutClick(e);
+                  } else {
+                    handleNavClick(item.href);
+                  }
+                }}
                 className="text-slate-300 hover:text-white transition-colors duration-200 font-medium"
               >
                 {item.name}
@@ -99,7 +116,13 @@ const Header = () => {
                   key={item.name}
                   href={item.href}
                   className="text-slate-300 hover:text-white block px-3 py-2 text-base font-medium transition-colors duration-200"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={(e) => {
+                    if (item.name === 'About') {
+                      handleAboutClick(e);
+                    } else {
+                      setIsMenuOpen(false);
+                    }
+                  }}
                 >
                   {item.name}
                 </a>
