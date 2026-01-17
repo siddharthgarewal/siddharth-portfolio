@@ -6,11 +6,21 @@ import { profileData } from '../data/mock';
 const Hero = () => {
   const { personalInfo } = profileData;
 
+  const handleDownloadResume = () => {
+    const link = document.createElement('a');
+    link.href = process.env.PUBLIC_URL + '/assets/Siddharth_Garewal_5_Yrs_Exp.pdf';
+    link.download = 'Siddharth_Garewal_5_Yrs_Exp.pdf';
+    link.target = '_blank';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(120,119,198,0.1),transparent_50%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.05),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(120,119,198,0.1),transparent_50%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.05),transparent_50%)] pointer-events-none" />
       
       <div className="container mx-auto px-6 lg:px-8 min-h-screen flex items-center">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
@@ -62,9 +72,10 @@ const Hero = () => {
               </Button>
               
               <Button 
-                variant="outline" 
-                size="lg" 
-                className="border-white/20 text-white hover:bg-white/10 transition-all duration-300"
+                size="lg"
+                variant="outline"
+                onClick={handleDownloadResume}
+                className="border-white/20 text-white hover:bg-white/10 transition-all duration-300 cursor-pointer"
               >
                 <Download className="mr-2 h-4 w-4" />
                 Download Resume
